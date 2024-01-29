@@ -1,13 +1,19 @@
-FROM node:14-alpine
+FROM node:16-alpine3.17
 
-WORKDIR /app
+# set working directory
+WORKDIR /frontend
 
-COPY package*.json  /app
+# 
+COPY package*.json ./
 
+# Install project dependencies
 RUN npm install
 
-COPY . .
+# add app
+COPY . /frontend
 
+# expose port
 EXPOSE 3000
 
+# start app
 CMD ["npm", "start"]

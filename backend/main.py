@@ -9,7 +9,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Hello": "world"}
 
 @app.post("/bot_query")
 def bot_query(input_text: str):
